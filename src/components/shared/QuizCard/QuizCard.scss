@@ -1,0 +1,138 @@
+@import '../../../index.scss';
+
+.background {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+
+    .container {
+        background: $cardBackground;
+        border-radius: 12px;
+        min-height: 450px;
+        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+            0 8px 10px -6px rgb(0 0 0 / 0.1);
+        filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+        width: 60%;
+
+        .question {
+            padding: 15px 30px;
+            padding-top: 30px;
+        }
+
+        .choices {
+            display: flex;
+            flex-direction: column;
+            padding: 10px 24px;
+
+            .row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 8px 0;
+                row-gap: 8px;
+                column-gap: 20px;
+                flex-wrap: wrap;
+
+                .choice {
+                    flex-grow: 1;
+                    background: #1e1e1e60;
+                    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+                        0 2px 4px -2px rgb(0 0 0 / 0.1);
+                    filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+                    padding: 5px 24px;
+                    border-radius: 12px;
+                    font-size: 20px;
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+                    --tw-shadow-color: #1e1e1e82;
+
+                    &:hover {
+                        background: #1a1919de;
+                    }
+                }
+            }
+        }
+
+        .timer {
+            background: #12121210;
+            padding: 6px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: F5F5F5;
+            font-size: 18px;
+            margin: 30px 0;
+            font-weight: 500;
+        }
+
+        .submitOptions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 30px;
+            margin-top: 50px;
+            margin-bottom: 30px;
+
+            button {
+                background: #00000044;
+                width: 180px;
+                padding: 10px 15px;
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                cursor: pointer;
+                outline: none;
+                font-size: 16px;
+                color: #fff;
+                box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+                    0 8px 10px -6px rgb(0 0 0 / 0.1);
+                filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+                --tw-shadow-color: #00000059;
+                transition: all 0.4s ease-in-out;
+
+                &:before {
+                    backdrop-filter: blur(200px);
+                }
+
+                &:hover,
+                &:focus {
+                    background: #000000b2;
+                }
+            }
+        }
+
+        .completed {
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            p {
+                margin: 10px;
+            }
+
+            .thankyou {
+                margin: 20px 20px;
+                width: 400px;
+                text-align: center;
+            }
+        }
+
+        &:before {
+            position: absolute;
+            top: -5px;
+            bottom: -5px;
+            left: -5px;
+            right: -5px;
+            z-index: -1;
+            content: "";
+            filter: blur(10px);
+            backdrop-filter: blur(500px);
+            border-radius: 12px !important;
+        }
+    }
+}
